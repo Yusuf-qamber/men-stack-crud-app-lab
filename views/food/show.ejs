@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <h1><%=foundFood.name%></h1>
+
+      <p><strong>Category:</strong> <%= foundFood.category %></p>
+
+    <p><strong>Price:</strong> <%= foundFood.price %></p>
+
+    <p><strong>Description:</strong></p>
+    <p><%= foundFood.description %></p>
+
+    <div class="actions">
+      <form
+        action="/food/<%=foundFood._id%>?_method=DELETE"
+        method="POST"
+      >
+        <button type="submit">Delete <%= foundFood.name%></button>
+      </form>
+    </div>
+    <a class="businesses-index-link" href="/food">
+      <div class="index-link-text">Back to All Food</div>
+    </a>
+    <a class="edit-link" href="/food/<%= foundFood._id %>/edit">
+      <div class="edit-text">Edit <%= foundFood.name %></div>
+    </a>
+</body>
+</html>

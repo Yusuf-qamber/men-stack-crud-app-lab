@@ -3,26 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create food</title>
+    <title>Create Food</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1>Create Food</h1>
-    <form action="/food" method="POST">
-      <label for="name">Food Name: </label>
-      <input type="text" name="name" id="name" placeholder="Milk" required />
+    <div class="container">
+      <h1>Create New Food</h1>
+      <form action="/food" method="POST" class="form">
+        <label for="name">Food Name:</label>
+        <input type="text" name="name" id="name" placeholder="Milk" required />
 
-      <label for="category">Category:</label>
-      <input type="text" name="category" id="category" />
+        <label for="category">Category:</label>
+        <input type="text" name="category" id="category" />
 
-      <label for="price">Price: </label>
-      <input type="text" name="price" id="price" />
+        <label for="price">Price:</label>
+        <input type="text" name="price" id="price" />
 
-      <label for="description">Description</label>
-      <input type="text" name="description" id="description" />
+        <label for="description">Description:</label>
+        <input type="text" name="description" id="description" />
 
-      <label for="description">Description:</label>
-      <textarea name="description" id="description" rows="4"> </textarea>
-      <button type="submit">Add Food</button>
-    </form>
+        <button type="submit" class="btn">Add Food</button>
+      </form>
+    </div>
   </body>
 </html>

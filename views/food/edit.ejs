@@ -3,45 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eidt<%=foundFood.name%></title>
+    <title>Edit <%= foundFood.name %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1>Eidt <%= foundFood.name%></h1>
-    <form action="/food/<%= foundFood._id %>?_method=PUT" method="POST">
-      <label for="name">Food Name:</label>
-      <input
-        type="text"
-        name="name"
-        id="name"
-        value="<%= foundFood.name %>"
-        required
-      />
+    <div class="container">
+      <h1>Edit <%= foundFood.name %></h1>
+      <form action="/food/<%= foundFood._id %>" method="POST" class="form">
+        <input type="hidden" name="_method" value="PUT" />
 
-      <label for="category">Category:</label>
-      <input
-        type="text"
-        name="category"
-        id="category"
-        value="<%= foundFood.category %>"
-        required
-      />
+        <label for="name">Food Name:</label>
+        <input type="text" name="name" id="name" value="<%= foundFood.name %>" required />
 
-      <label for="price">Price:</label>
-      <input
-        type="text"
-        name="price"
-        id="price"
-        value="<%= foundFood.price %>"
-        required
-      />
+        <label for="category">Category:</label>
+        <input type="text" name="category" id="category" value="<%= foundFood.category %>" required />
 
-      <label for="description">Description:</label>
-      <textarea name="description" id="description" rows="4">
-<%= foundFood.description %>
-</textarea
-      >
+        <label for="price">Price:</label>
+        <input type="number" name="price" id="price" value="<%= foundFood.price %>" required />
 
-      <button type="submit">Edit Food</button>
-    </form>
+        <label for="description">Description:</label>
+        <textarea name="description" id="description" rows="4"><%= foundFood.description %></textarea>
+
+        <button type="submit" class="btn">Update Food</button>
+      </form>
+    </div>
   </body>
 </html>

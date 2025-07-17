@@ -3,29 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Food Index</title>
+    <title>All Food</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <div class="index-header-div">
-      <h1>All Food</h1>
-      <a href="/food/new" class="add-business">Add Food</a>
+    <div class="container">
+      <header class="index-header">
+        <h1>All Food</h1>
+        <a href="/food/new" class="btn">Add Food</a>
+      </header>
+
+      <ul class="food-list">
+        <% allFood.forEach(food => { %>
+          <li class="food-card">
+            <h2><a href="/food/<%= food._id %>"><%= food.name %></a></h2>
+            <p><strong>Category:</strong> <%= food.category %></p>
+            <p><strong>Price:</strong> $<%= food.price %></p>
+            <p><strong>Description:</strong> <%= food.description %></p>
+          </li>
+        <% }) %>
+      </ul>
     </div>
-    <% console.log(allFood) %>
-    <ul>
-      <% allFood.forEach(food => { %>
-      <li>
-        <h2>
-          <a href="/food/<%= food._id%>"> <%= food.name %></a>
-        </h2>
-        <p><strong>Category:</strong> <%= food.category %></p>
-        <p><strong>Price:</strong> <%= food.price %></p>
-        <p><strong>Description:</strong> <%= food.description %></p>
-        
-       
-       
-        <hr />
-      </li>
-      <% }) %>
-    </ul>
   </body>
 </html>

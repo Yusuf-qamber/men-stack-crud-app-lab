@@ -1,0 +1,83 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.center-text {
+  text-align: center;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+.form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
+
+.btn.danger {
+  background: #dc3545;
+}
+
+.btn.danger:hover {
+  background: #a71d2a;
+}
+
+.food-list {
+  list-style: none;
+  padding: 0;
+}
+
+.food-card {
+  background: #f1f1f1;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.index-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,34 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-  <h1><%=foundFood.name%></h1>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= foundFood.name %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1><%= foundFood.name %></h1>
       <p><strong>Category:</strong> <%= foundFood.category %></p>
+      <p><strong>Price:</strong> $<%= foundFood.price %></p>
+      <p><strong>Description:</strong> <%= foundFood.description %></p>
 
-    <p><strong>Price:</strong> <%= foundFood.price %></p>
-
-    <p><strong>Description:</strong></p>
-    <p><%= foundFood.description %></p>
-
-    <div class="actions">
-      <form
-        action="/food/<%=foundFood._id%>?_method=DELETE"
-        method="POST"
-      >
-        <button type="submit">Delete <%= foundFood.name%></button>
-      </form>
+      <div class="actions">
+        <form action="/food/<%= foundFood._id %>?_method=DELETE" method="POST">
+          <button type="submit" class="btn danger">Delete</button>
+        </form>
+        <a href="/food/<%= foundFood._id %>/edit" class="btn">Edit</a>
+        <a href="/food" class="btn">Back to All Food</a>
+      </div>
     </div>
-    <a class="businesses-index-link" href="/food">
-      <div class="index-link-text">Back to All Food</div>
-    </a>
-    <a class="edit-link" href="/food/<%= foundFood._id %>/edit">
-      <div class="edit-text">Edit <%= foundFood.name %></div>
-    </a>
-</body>
+  </body>
 </html>
